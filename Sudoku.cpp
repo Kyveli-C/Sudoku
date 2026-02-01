@@ -4,10 +4,12 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+using namespace std;
+
+#define MAX_SIZE 49
 
 
-
-typedef struct SudokuPuzzle {
+ struct SudokuPuzzle {
     int numberOfRows;
     int numberOfColumns;
     int puzzleNumbers[9][9] = {};
@@ -27,6 +29,8 @@ SudokuPuzzle* loadPuzzle(string filename) {
     {
         cout << line << endl;
         //print number of missing numbers
+        // The gcount() method returns the number of characters extracted from the file by most recently called file reading method.
+        // 
         //int numberOfMisingDigits;
         //cout<<
 
@@ -38,50 +42,50 @@ SudokuPuzzle* loadPuzzle(string filename) {
     }
 }
 
-template <typename T>
-struct Stack {
-
-    T _data[MAX_SIZE];
-    unsigned int _top = 0;
-
-    bool isFull(Stack& s)
-    {
-        return _top == MAX_SIZE - 1;
-    }
-
-    bool isEmpty(Stack& s)
-    {
-        return _top == 0;
-    }
-
-    void push(T newValue);
-    {
-        if (!isFull())
-        {
-            _data[_top] = newValue;
-            _top++;
-        }
-    }
-    void pop()
-    {
-        if (!isEmpty())
-        {
-            _top--;
-        }
-    }
-
-    T top(Stack& s)
-    {
-        return _data[top - 1];
-    }
-
-};
+//template <typename T>
+//struct Stack {
+//
+//    T _data[MAX_SIZE];
+//    unsigned int _top = 0;
+//
+//    bool isFull(Stack& s)
+//    {
+//        return _top == MAX_SIZE - 1;
+//    }
+//
+//    bool isEmpty(Stack& s)
+//    {
+//        return _top == 0;
+//    }
+//
+//    void push(T newValue)
+//    {
+//        if (!isFull())
+//        {
+//            _data[_top] = newValue;
+//            _top++;
+//        }
+//    }
+//    void pop()
+//    {
+//        if (!isEmpty())
+//        {
+//            _top--;
+//        }
+//    }
+//
+//    T top(Stack& s)
+//    {
+//        return _data[top - 1];
+//    }
+//
+//};
 
 
 int main()
 {
 
-
+    SudokuPuzzle test; 
+    loadPuzzle("sudoku.txt");
 
 }
-

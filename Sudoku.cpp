@@ -2,11 +2,9 @@
 //
 
 #include <iostream>
-#include <iomanip>
 #include <string>
 #include <fstream>
-#include <chrono>
-#include <ctime>
+
 
 
 typedef struct SudokuPuzzle {
@@ -20,13 +18,24 @@ typedef struct SudokuPuzzle {
 };
 
 
-SudokuPuzzle* loadPuzzle(SudokuPuzzle& filename) {
-    ifstream file("sudoku.txt");
+SudokuPuzzle* loadPuzzle(string filename) {
     //load the sample puzzles 
-    //print number of missing numbers
-    //print position of first missing number
-    //print position of last missing number
-    //print the numbers that exist & their position 
+    ifstream inputfile("sudoku.txt");
+    string line; //store each line from txt in the variable line
+
+    while (getline(inputfile, line))   //read each line from the text
+    {
+        cout << line << endl;
+        //print number of missing numbers
+        //int numberOfMisingDigits;
+        //cout<<
+
+        //print position of first missing number
+        //print position of last missing number
+        //print the numbers that exist & their position 
+
+
+    }
 }
 
 template <typename T>
